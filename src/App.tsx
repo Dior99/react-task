@@ -6,8 +6,8 @@ import Rating from "./Components/Rating";
 function App() {
     return (
         <div className="App">
-            <Accordion value={'Menu One'} collapsed={false}/>
-            <Accordion value={'Menu Two'} collapsed={true}/>
+            <Accordion value={'Menu One'} collapsed={true}/>
+            <Accordion value={'Menu Two'} collapsed={false}/>
             <hr/>
             <Rating value={1}/>
             <Rating value={2}/>
