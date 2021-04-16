@@ -16,7 +16,8 @@ function App() {
             <Rating value={4}/>
             <Rating value={5}/>
             <hr/>
-            <OnOff collapsed={false}/>
+            <OnOff/>
+
         </div>
     );
 }
