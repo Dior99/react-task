@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 type UncontrolledOnOffType = {
-    collapsed: boolean
-    onClick: () => void
+    onClick: (on: boolean) => void
 }
 
-function OnOff(props: UncontrolledOnOffType) {
+function UncontrolledOnOff(props: UncontrolledOnOffType) {
+
+    const [on, setOn] = useState(false);
 
     const header = {
         display: "flex",
@@ -17,7 +18,7 @@ function OnOff(props: UncontrolledOnOffType) {
         borderRadius: "10px",
         padding: "10px",
         marginRight: "10px",
-        backgroundColor: props.collapsed ? "green" : "white",
+        backgroundColor: on ? "green" : "white",
     }
     const buttonOff = {
         width: "50px",
@@ -26,7 +27,7 @@ function OnOff(props: UncontrolledOnOffType) {
         borderRadius: "10px",
         padding: "10px",
         marginRight: "10px",
-        backgroundColor: props.collapsed ? "white" : "red",
+        backgroundColor: on ? "white" : "red",
     }
     const circle = {
         width: "20px",
@@ -35,16 +36,25 @@ function OnOff(props: UncontrolledOnOffType) {
         borderRadius: "30px",
         marginRight: "10px",
         alignSelf: "center",
-        backgroundColor: props.collapsed ? "green" : "red",
+        backgroundColor: on ? "green" : "red",
     }
+
+    const onClicked = () => {
+        setOn(true);
+        props.onClick(true);
+    };
+    const offClicked = () => {
+        setOn(false)
+        props.onClick(false)
+    };
 
     return (
         <div style={header}>
-            <div style={buttonOn} onClick={props.onClick}>On</div>
-            <div style={buttonOff} onClick={props.onClick}>Off</div>
+            <div style={buttonOn}
+                 onClick={ onClicked }>On</div>
+            <div style={buttonOff} onClick={ offClicked }>Off</div>
             <div style={circle}></div>
         </div>
     )
 }
-
-export default OnOff;
+export default UncontrolledOnOff;
