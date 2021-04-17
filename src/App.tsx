@@ -3,6 +3,10 @@ import './App.css';
 import Accordion from "./Components/Accordion/Accordion";
 import Rating from "./Components/Rating/Rating";
 import OnOff from "./Components/OnOff/OnOff";
+import UncontrolledAccordion from "./Components/UncontrolledAccordion/UncontrolledAccordion";
+import UncontrolledRating from "./Components/UncontrolledRating/UncontrolledRating";
+
+
 
 function App() {
     return (
@@ -17,7 +21,10 @@ function App() {
             <Rating value={5}/>
             <hr/>
             <OnOff/>
-
+            <hr/>
+            <UncontrolledAccordion value={'Menu One'}/>
+            <hr/>
+            <UncontrolledRating/>
         </div>
     );
 }
