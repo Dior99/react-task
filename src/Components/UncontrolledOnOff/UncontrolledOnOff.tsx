@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 
-type UncontrolledOnOffType = {
+export type UncontrolledOnOffType = {
     onClick: (on: boolean) => void
 }
 
-function UncontrolledOnOff(props: UncontrolledOnOffType) {
+export function UncontrolledOnOff(props: UncontrolledOnOffType) {
 
     const [on, setOn] = useState(false);
 
@@ -57,4 +57,3 @@ function UncontrolledOnOff(props: UncontrolledOnOffType) {
         </div>
     )
 }
-export default UncontrolledOnOff;

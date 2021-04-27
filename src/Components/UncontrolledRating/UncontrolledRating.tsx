@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-function UncontrolledRating() {
+export function UncontrolledRating() {
 
     const [value, setValue] = useState(1 | 2 | 3 | 4 | 5)
 
@@ -28,5 +28,3 @@ function Star(props: StarPropsType) {
         </span>
     )
 }
-
-export default UncontrolledRating;

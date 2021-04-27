@@ -1,11 +1,11 @@
 import React from 'react';
 
-type UncontrolledOnOffType = {
+export type UncontrolledOnOffType = {
     collapsed: boolean
-    onClick: () => void
+    onClick: (on: boolean) => void
 }
 
-function OnOff(props: UncontrolledOnOffType) {
+export function OnOff(props: UncontrolledOnOffType) {
 
     const header = {
         display: "flex",
@@ -40,11 +40,10 @@ function OnOff(props: UncontrolledOnOffType) {
 
     return (
         <div style={header}>
-            <div style={buttonOn} onClick={props.onClick}>On</div>
-            <div style={buttonOff} onClick={props.onClick}>Off</div>
-            <div style={circle}></div>
+            <div style={buttonOn} onClick={ () => {props.onClick(true)} }>On</div>
+            <div style={buttonOff} onClick={ () => {props.onClick(false)} }>Off</div>
+            <div style={circle}/>
         </div>
     )
 }
 
-export default OnOff;
