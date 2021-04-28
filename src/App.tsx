@@ -6,7 +6,8 @@ import {UncontrolledAccordion} from "./Components/UncontrolledAccordion/Uncontro
 import {UncontrolledRating} from "./Components/UncontrolledRating/UncontrolledRating";
 import {OnOff} from "./Components/OnOff/OnOff";
 import {UncontrolledOnOff} from './Components/UncontrolledOnOff/UncontrolledOnOff';
-
+import {Select} from "./Components/Select/Select";
+import {Input} from "./Components/Input/Input";
 
 
 function App() {
@@ -17,11 +18,18 @@ function App() {
 
     return (
         <div className="App">
-            <Accordion value={'Menu One'}
+            <Accordion valueTitle={'Menu One'}
                        collapsed={accordionCollapsed}
-                       onClick={() => {
+                       onChange={() => {
                            setAccordionCollapsed(!accordionCollapsed)
-                       }}/>
+                       }}
+                       items={[
+                           {value: 1, title: "Dima",},
+                           {value: 2, title: "Kristina",},
+                           {value: 3, title: "Misha",},
+                       ]}
+                       onClick={ () => {}}
+            />
             <hr/>
             <Rating value={ratingValue}
                     onClick={setRatingValue}/>
@@ -31,6 +39,14 @@ function App() {
             <UncontrolledAccordion value={'Menu One'}/>
             <hr/>
             <UncontrolledRating/>
+            <hr/>
+            <Select onChange={() => {}} items={[
+                {value: 1, title: "Dima",},
+                {value: 2, title: "Kristina",},
+                {value: 3, title: "Misha",},
+            ]}/>
+            <hr/>
+            <Input/>
             <hr/>
             {/*<OnOff collapsed={on}
                    onClick={() => {setOn(!on)}}/>*/}
