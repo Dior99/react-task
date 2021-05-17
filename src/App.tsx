@@ -15,6 +15,8 @@ function App() {
     const [ratingValue, setRatingValue] = useState<RatingValuePropsType>(1)
     const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
     const [on, setOn] = useState(false);
+    const [parentValue, setParentValue] = useState<string>('')
+
 
     return (
         <div className="App">
@@ -40,13 +42,14 @@ function App() {
             <hr/>
             <UncontrolledRating/>
             <hr/>
-            <Select onChange={() => {}} items={[
+            <Select onChange={() => {} }
+                    items={[
                 {value: 1, title: "Dima",},
                 {value: 2, title: "Kristina",},
                 {value: 3, title: "Misha",},
             ]}/>
             <hr/>
-            <Input/>
+            <Input value={parentValue} onChange={setParentValue}/>
             <hr/>
             {/*<OnOff collapsed={on}
                    onClick={() => {setOn(!on)}}/>*/}
